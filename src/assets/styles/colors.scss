@@ -1,0 +1,21 @@
+$white: #ffffff;
+$background: #ede4e0;
+$black: #000000;
+$red: #c21010;
+$gray: #707070;
+$primary: #2192ff;
+$accent: #38e54d;
+$secondary: #9cff2e;
+$yellow: #fdff00;
+
+:root {
+  --white: #{$white};
+  --background: #{$background};
+  --black: #{$black};
+  --red: #{$red};
+  --gray: #{$gray};
+  --primary: #{$primary};
+  --accent: #{$accent};
+  --secondary: #{$secondary};
+  --yellow: #{$yellow};
+}
