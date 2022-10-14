@@ -1,11 +1,21 @@
-// import styles from "./Input.module.scss";
-// const {  } = styles;
+import styles from './Input.module.scss';
+const { input, label } = styles;
 
-const Input = ({ type, id, isLabel }) => {
+const Input = ({ type, id, isLabel, handlerChange, value, labelTitle }) => {
   return (
     <>
-      {isLabel && <label htmlFor={id}></label>}
-      <input id={id} type={type} />
+      {isLabel && (
+        <label className={label} htmlFor={id}>
+          {labelTitle}
+        </label>
+      )}
+      <input
+        className={input}
+        onChange={handlerChange}
+        id={id}
+        type={type}
+        value={value}
+      />
     </>
   );
 };

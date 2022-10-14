@@ -1,3 +1,4 @@
+// import { lazy, Suspense } from 'react';
 import { TableLayout } from './layouts/TableLayout';
 
 const App = () => {

@@ -14,6 +14,10 @@ const deleteUserRequest = createAction('user/deleteUserRequest');
 const deleteUserSuccess = createAction('user/deleteUserSuccess');
 const deleteUserError = createAction('user/deleteUserError');
 
+const editUserRequest = createAction('user/editUserRequest');
+const editUserSuccess = createAction('user/editUserSuccess');
+const editUserError = createAction('user/editUserError');
+
 export default {
   fetchUsersRequest,
   fetchUsersSuccess,
@@ -24,4 +28,7 @@ export default {
   deleteUserRequest,
   deleteUserSuccess,
   deleteUserError,
+  editUserRequest,
+  editUserSuccess,
+  editUserError,
 };

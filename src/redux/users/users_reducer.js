@@ -6,6 +6,14 @@ const data = createReducer(null, {
   [usersActions.createUserSuccess]: (state, { payload }) => [...state, payload],
   [usersActions.deleteUserSuccess]: (state, { payload }) =>
     state.filter(user => user.id !== payload.id),
+  [usersActions.editUserSuccess]: (state, { payload }) =>
+    state.map(user => {
+      if (user.id !== payload.id) {
+        return user;
+      } else {
+        return payload;
+      }
+    }),
 });
 
 const loading = createReducer(false, {
@@ -18,12 +26,16 @@ const loading = createReducer(false, {
   [usersActions.deleteUserRequest]: () => true,
   [usersActions.deleteUserSuccess]: () => false,
   [usersActions.deleteUserError]: () => false,
+  [usersActions.editUserRequest]: () => true,
+  [usersActions.editUserSuccess]: () => false,
+  [usersActions.editUserError]: () => false,
 });
 
 const error = createReducer(null, {
   [usersActions.fetchUsersError]: (_, { payload }) => payload,
   [usersActions.createUserError]: (_, { payload }) => payload,
   [usersActions.deleteUserError]: (_, { payload }) => payload,
+  [usersActions.editUserError]: (_, { payload }) => payload,
 });
 
 export default combineReducers({

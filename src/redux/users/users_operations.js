@@ -13,6 +13,7 @@ const getAllUsers = () => async dispatch => {
     dispatch(usersActions.fetchUsersError(error.message));
   }
 };
+
 const createUser = () => async dispatch => {
   dispatch(usersActions.createUserRequest());
   try {
@@ -22,6 +23,7 @@ const createUser = () => async dispatch => {
     dispatch(usersActions.createUserError(error.message));
   }
 };
+
 const deleteUser = id => async dispatch => {
   dispatch(usersActions.deleteUserRequest());
   try {
@@ -31,4 +33,15 @@ const deleteUser = id => async dispatch => {
     dispatch(usersActions.deleteUserError(error.message));
   }
 };
-export default { getAllUsers, createUser, deleteUser };
+
+const editUser = (newUser, id) => async dispatch => {
+  dispatch(usersActions.editUserRequest());
+  try {
+    const response = await axios.put(`/users/${id}`, newUser);
+    dispatch(usersActions.editUserSuccess(response.data));
+  } catch (error) {
+    dispatch(usersActions.editUserError(error.message));
+  }
+};
+
+export default { getAllUsers, createUser, deleteUser, editUser };

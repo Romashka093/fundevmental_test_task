@@ -6,7 +6,7 @@ import { TableRow } from '../elements/TableRow';
 import styles from './Table.module.scss';
 import { Button } from '../ui/Button';
 
-// const {} = styles;
+const {} = styles;
 const { id, name, age, about, actions } = en;
 
 const Table = () => {
@@ -24,9 +24,10 @@ const Table = () => {
   };
 
   const handlerDeleteUser = id => {
-    // deleteUser
-    console.log('id :>> ', id);
     dispatch(usersOperations.deleteUser(id));
+  };
+  const handlerEditUser = (data, id) => {
+    dispatch(usersOperations.editUser(data, id));
   };
 
   return (
@@ -60,16 +61,17 @@ const Table = () => {
           {allUsers?.length >= 1 &&
             allUsers.map((user, index) => (
               <TableRow
-                key={user.ID}
+                key={user.id}
                 user={user}
                 index={index}
                 handlerDeleteUser={handlerDeleteUser}
+                handlerEditUser={handlerEditUser}
               />
             ))}
         </tbody>
         <tfoot>
           <tr>
-            <td colSpan={6}>footer</td>
+            <td colSpan={7}>footer</td>
           </tr>
         </tfoot>
       </table>
