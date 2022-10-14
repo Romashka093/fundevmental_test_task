@@ -23,6 +23,12 @@ const Table = () => {
     dispatch(usersOperations.createUser());
   };
 
+  const handlerDeleteUser = id => {
+    // deleteUser
+    console.log('id :>> ', id);
+    dispatch(usersOperations.deleteUser(id));
+  };
+
   return (
     <>
       <Button value="Add new user" type="button" handlerClick={handlerClick} />
@@ -53,7 +59,12 @@ const Table = () => {
         <tbody>
           {allUsers?.length >= 1 &&
             allUsers.map((user, index) => (
-              <TableRow key={user.ID} user={user} index={index} />
+              <TableRow
+                key={user.ID}
+                user={user}
+                index={index}
+                handlerDeleteUser={handlerDeleteUser}
+              />
             ))}
         </tbody>
         <tfoot>

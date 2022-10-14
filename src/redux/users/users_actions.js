@@ -10,6 +10,10 @@ const createUserRequest = createAction('user/createUserRequest');
 const createUserSuccess = createAction('user/createUserSuccess');
 const createUserError = createAction('user/createUserError');
 
+const deleteUserRequest = createAction('user/deleteUserRequest');
+const deleteUserSuccess = createAction('user/deleteUserSuccess');
+const deleteUserError = createAction('user/deleteUserError');
+
 export default {
   fetchUsersRequest,
   fetchUsersSuccess,
@@ -17,4 +21,7 @@ export default {
   createUserRequest,
   createUserSuccess,
   createUserError,
+  deleteUserRequest,
+  deleteUserSuccess,
+  deleteUserError,
 };

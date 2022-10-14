@@ -22,5 +22,13 @@ const createUser = () => async dispatch => {
     dispatch(usersActions.createUserError(error.message));
   }
 };
-
-export default { getAllUsers, createUser };
+const deleteUser = id => async dispatch => {
+  dispatch(usersActions.deleteUserRequest());
+  try {
+    const response = await axios.delete(`/users/${id}`);
+    dispatch(usersActions.deleteUserSuccess(response.data));
+  } catch (error) {
+    dispatch(usersActions.deleteUserError(error.message));
+  }
+};
+export default { getAllUsers, createUser, deleteUser };
