@@ -1,9 +1,11 @@
-function App() {
+import { TableLayout } from './layouts/TableLayout';
+
+const App = () => {
   return (
     <>
-      <div></div>
+      <TableLayout />
     </>
   );
-}
+};
 
 export default App;

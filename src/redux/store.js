@@ -1,9 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 import logger from 'redux-logger';
+import usersReducer from './users/users_reducer';
 
 const store = configureStore({
   middleware: getDefaultMiddleware => getDefaultMiddleware().concat(logger),
-  reducer: {},
+  reducer: {
+    users: usersReducer,
+  },
   devTools: process.env.NODE_ENV === 'development',
 });
 
