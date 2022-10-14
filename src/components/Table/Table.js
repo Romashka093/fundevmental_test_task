@@ -4,6 +4,7 @@ import { usersSelector, usersOperations } from '../../redux/users';
 import { en } from '../../utility/langs';
 import { TableRow } from '../elements/TableRow';
 import styles from './Table.module.scss';
+import { Button } from '../ui/Button';
 
 // const {} = styles;
 const { id, name, age, about, actions } = en;
@@ -11,16 +12,20 @@ const { id, name, age, about, actions } = en;
 const Table = () => {
   const dispatch = useDispatch();
   const allUsers = useSelector(usersSelector.getUsers);
-
   const isGettingUsers = Boolean(allUsers);
-  //   console.log('all users', allUsers);
 
   useEffect(() => {
     dispatch(usersOperations.getAllUsers());
   }, [dispatch, isGettingUsers]);
 
+  const handlerClick = evt => {
+    evt.preventDefault();
+    dispatch(usersOperations.createUser());
+  };
+
   return (
     <>
+      <Button value="Add new user" type="button" handlerClick={handlerClick} />
       <table>
         <thead>
           <tr>
@@ -47,7 +52,9 @@ const Table = () => {
         </thead>
         <tbody>
           {allUsers?.length >= 1 &&
-            allUsers.map(user => <TableRow key={user.ID} user={user} />)}
+            allUsers.map((user, index) => (
+              <TableRow key={user.ID} user={user} index={index} />
+            ))}
         </tbody>
         <tfoot>
           <tr>

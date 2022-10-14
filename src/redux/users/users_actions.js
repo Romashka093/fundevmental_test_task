@@ -6,4 +6,15 @@ const fetchUsersRequest = createAction('users/fetchUsersRequest');
 const fetchUsersSuccess = createAction('users/fetchUsersSuccess');
 const fetchUsersError = createAction('users/fetchUsersError');
 
-export default { fetchUsersRequest, fetchUsersSuccess, fetchUsersError };
+const createUserRequest = createAction('user/createUserRequest');
+const createUserSuccess = createAction('user/createUserSuccess');
+const createUserError = createAction('user/createUserError');
+
+export default {
+  fetchUsersRequest,
+  fetchUsersSuccess,
+  fetchUsersError,
+  createUserRequest,
+  createUserSuccess,
+  createUserError,
+};

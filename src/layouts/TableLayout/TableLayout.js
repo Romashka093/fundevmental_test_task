@@ -3,9 +3,9 @@ import { Table } from '../../components/Table';
 
 const TableLayout = () => {
   return (
-    <>
+    <main>
       <Table />
-    </>
+    </main>
   );
 };
 

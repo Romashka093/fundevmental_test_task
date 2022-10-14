@@ -8,12 +8,19 @@ const getAllUsers = () => async dispatch => {
   dispatch(usersActions.fetchUsersRequest());
   try {
     const response = await axios.get(`/users`);
-    console.log('response', response);
-
     dispatch(usersActions.fetchUsersSuccess(response.data));
   } catch (error) {
     dispatch(usersActions.fetchUsersError(error.message));
   }
 };
+const createUser = () => async dispatch => {
+  dispatch(usersActions.createUserRequest());
+  try {
+    const response = await axios.post(`/users`);
+    dispatch(usersActions.createUserSuccess(response.data));
+  } catch (error) {
+    dispatch(usersActions.createUserError(error.message));
+  }
+};
 
-export default { getAllUsers };
+export default { getAllUsers, createUser };
