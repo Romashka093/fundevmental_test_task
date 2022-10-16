@@ -59,7 +59,7 @@ const Table = () => {
         </thead>
         <tbody>
           {allUsers?.length >= 1 &&
-            allUsers.map((user, index) => (
+            allUsers?.map((user, index) => (
               <TableRow
                 key={user.id}
                 user={user}

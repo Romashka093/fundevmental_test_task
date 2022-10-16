@@ -1,41 +1,45 @@
+/* eslint-disable no-unused-expressions */
 // import styles from './TableRow.modules.scss';
 // const {} = styles;
+import { useState } from 'react';
 import { ReactComponent as Delete } from '../../../assets/icons/delete.svg';
 import { ReactComponent as Pencil } from '../../../assets/icons/pencil.svg';
 import { ReactComponent as Checkmark } from '../../../assets/icons/checkmark.svg';
-
-import { useState } from 'react';
+import useLocalStorage from '../../../utility/hooks/useLocalStorage';
 import { Input } from '../../ui/Input';
 
 const TableRow = ({ user, index, handlerDeleteUser, handlerEditUser }) => {
-  const { ID, id, name, age, about } = user;
+  const { ID, id, name, age, about, isEditing } = user;
 
-  const [isSwitchedOnEditing, setIsSwitchedOnEditing] = useState(false);
-  const [editedId, setEditedId] = useState(ID);
-  const [editedName, setEditedName] = useState(name);
-  const [editAge, setEditAge] = useState(age);
-  const [editInfo, setEditInfo] = useState(about);
+  const [isSwitchedOnEditing, setIsSwitchedOnEditing] = useState(isEditing);
 
-  const handlerSwitchOnEditing = () => {
+  const [editedId, setEditedId] = useLocalStorage(ID, ID);
+  const [editedName, setEditedName] = useLocalStorage(name, name);
+  const [editAge, setEditAge] = useLocalStorage(age, age);
+  const [editInfo, setEditInfo] = useLocalStorage(about, about);
+
+  const handlerSwitchEditing = () => {
     setIsSwitchedOnEditing(!isSwitchedOnEditing);
-    const isChanged =
-      editedId !== ID ||
-      editedName !== name ||
-      editAge !== age ||
-      editInfo !== about;
-
-    isSwitchedOnEditing &&
-      isChanged &&
-      handlerEditUser(
-        {
-          ...user,
-          ID: editedId,
-          name: editedName,
-          age: editAge,
-          about: editInfo,
-        },
-        id,
-      );
+    !isSwitchedOnEditing
+      ? handlerEditUser(
+          {
+            ...user,
+            isEditing: true,
+          },
+          id,
+        )
+      : (handlerEditUser(
+          {
+            ...user,
+            ID: editedId,
+            name: editedName,
+            age: editAge,
+            about: editInfo,
+            isEditing: false,
+          },
+          id,
+        ),
+        localStorage.clear());
   };
 
   const hendlerEditUserID = evt => {
@@ -121,8 +125,8 @@ const TableRow = ({ user, index, handlerDeleteUser, handlerEditUser }) => {
           </>
         </td>
         <td>
-          <button value={ID} onClick={handlerSwitchOnEditing}>
-            {isSwitchedOnEditing ? <Checkmark id={id} /> : <Pencil id={id} />}
+          <button id={id} value={ID} onClick={handlerSwitchEditing}>
+            {isSwitchedOnEditing ? <Checkmark /> : <Pencil />}
           </button>
         </td>
         <td>
