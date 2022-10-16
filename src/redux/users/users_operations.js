@@ -44,4 +44,18 @@ const editUser = (newUser, id) => async dispatch => {
   }
 };
 
-export default { getAllUsers, createUser, deleteUser, editUser };
+const sortUsers = (byValue, isOmitOrder) => async dispatch => {
+  console.log('isOmitOrder', isOmitOrder);
+
+  dispatch(usersActions.sortUsersRequest());
+  try {
+    const response = await axios.get(
+      `/users?sortBy=${byValue}${isOmitOrder ? '' : '&order=desc'}`,
+    );
+    dispatch(usersActions.sortUsersSuccess(response.data));
+  } catch (error) {
+    dispatch(usersActions.sortUsersError(error.message));
+  }
+};
+
+export default { getAllUsers, createUser, deleteUser, editUser, sortUsers };

@@ -18,6 +18,10 @@ const editUserRequest = createAction('user/editUserRequest');
 const editUserSuccess = createAction('user/editUserSuccess');
 const editUserError = createAction('user/editUserError');
 
+const sortUsersRequest = createAction('users/sortUsersRequest');
+const sortUsersSuccess = createAction('users/sortUsersSuccess');
+const sortUsersError = createAction('users/sortUsersError');
+
 export default {
   fetchUsersRequest,
   fetchUsersSuccess,
@@ -31,4 +35,7 @@ export default {
   editUserRequest,
   editUserSuccess,
   editUserError,
+  sortUsersRequest,
+  sortUsersSuccess,
+  sortUsersError,
 };

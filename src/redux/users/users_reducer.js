@@ -14,6 +14,7 @@ const data = createReducer(null, {
         return payload;
       }
     }),
+  [usersActions.sortUsersSuccess]: (_, { payload }) => payload,
 });
 
 const loading = createReducer(false, {
@@ -29,6 +30,9 @@ const loading = createReducer(false, {
   [usersActions.editUserRequest]: () => true,
   [usersActions.editUserSuccess]: () => false,
   [usersActions.editUserError]: () => false,
+  [usersActions.sortUsersRequest]: () => true,
+  [usersActions.sortUsersSuccess]: () => false,
+  [usersActions.sortUsersError]: () => false,
 });
 
 const error = createReducer(null, {
@@ -36,6 +40,7 @@ const error = createReducer(null, {
   [usersActions.createUserError]: (_, { payload }) => payload,
   [usersActions.deleteUserError]: (_, { payload }) => payload,
   [usersActions.editUserError]: (_, { payload }) => payload,
+  [usersActions.sortUsersError]: (_, { payload }) => payload,
 });
 
 export default combineReducers({

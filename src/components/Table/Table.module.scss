@@ -10,3 +10,11 @@ td {
 th {
   @include title_text;
 }
+
+.red {
+  fill: var(--red);
+}
+
+.gray {
+  fill: var(--gray);
+}
