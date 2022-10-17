@@ -9,7 +9,7 @@ Clone the project
 Go to the project directory
 
 ```bash
-  cd random-user
+  cd fundevmental_test_task
 ```
 
 Install dependencies
