@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/Romashka093/fundevmental_test_task.git/static/css/main.dfd50643.css",
-    "main.js": "/Romashka093/fundevmental_test_task.git/static/js/main.3114df11.js",
-    "static/js/787.a9f9520f.chunk.js": "/Romashka093/fundevmental_test_task.git/static/js/787.a9f9520f.chunk.js",
-    "static/media/mike_wazowski.webp": "/Romashka093/fundevmental_test_task.git/static/media/mike_wazowski.ba8604aad70aaed8fa12.webp",
-    "index.html": "/Romashka093/fundevmental_test_task.git/index.html",
-    "static/media/sort_alpha_desc.svg": "/Romashka093/fundevmental_test_task.git/static/media/sort_alpha_desc.daae333b9682dccc4c8bfb525b0e7f8e.svg",
-    "static/media/sort_alpha_asc.svg": "/Romashka093/fundevmental_test_task.git/static/media/sort_alpha_asc.3fab2801d60b88eb15ff6b929419ef0f.svg",
-    "static/media/move_up.svg": "/Romashka093/fundevmental_test_task.git/static/media/move_up.c580ba830237817ba66f6d3112488980.svg",
-    "static/media/sort_numberic_desc.svg": "/Romashka093/fundevmental_test_task.git/static/media/sort_numberic_desc.706eb940a5dec778b7e28bc153b14c17.svg",
-    "static/media/sort_numeric_asc.svg": "/Romashka093/fundevmental_test_task.git/static/media/sort_numeric_asc.021a414c9d5e65c2d78d05b3ce4146b4.svg",
-    "static/media/delete.svg": "/Romashka093/fundevmental_test_task.git/static/media/delete.558d6bf1c7b6a9b2b328f91172b4061e.svg",
-    "static/media/pencil.svg": "/Romashka093/fundevmental_test_task.git/static/media/pencil.1994a4331f252653ffd98747f044514c.svg",
-    "static/media/checkmark.svg": "/Romashka093/fundevmental_test_task.git/static/media/checkmark.a1f0145f86f03de2248d3e70fcea7a89.svg",
-    "main.dfd50643.css.map": "/Romashka093/fundevmental_test_task.git/static/css/main.dfd50643.css.map",
-    "main.3114df11.js.map": "/Romashka093/fundevmental_test_task.git/static/js/main.3114df11.js.map",
-    "787.a9f9520f.chunk.js.map": "/Romashka093/fundevmental_test_task.git/static/js/787.a9f9520f.chunk.js.map"
+    "main.css": "/Romashka093/fundevmental_test_task/static/css/main.1be0ec48.css",
+    "main.js": "/Romashka093/fundevmental_test_task/static/js/main.658ca8f2.js",
+    "static/js/787.a9f9520f.chunk.js": "/Romashka093/fundevmental_test_task/static/js/787.a9f9520f.chunk.js",
+    "static/media/mike_wazowski.webp": "/Romashka093/fundevmental_test_task/static/media/mike_wazowski.ba8604aad70aaed8fa12.webp",
+    "index.html": "/Romashka093/fundevmental_test_task/index.html",
+    "static/media/sort_alpha_desc.svg": "/Romashka093/fundevmental_test_task/static/media/sort_alpha_desc.daae333b9682dccc4c8bfb525b0e7f8e.svg",
+    "static/media/sort_alpha_asc.svg": "/Romashka093/fundevmental_test_task/static/media/sort_alpha_asc.3fab2801d60b88eb15ff6b929419ef0f.svg",
+    "static/media/move_up.svg": "/Romashka093/fundevmental_test_task/static/media/move_up.c580ba830237817ba66f6d3112488980.svg",
+    "static/media/sort_numberic_desc.svg": "/Romashka093/fundevmental_test_task/static/media/sort_numberic_desc.706eb940a5dec778b7e28bc153b14c17.svg",
+    "static/media/sort_numeric_asc.svg": "/Romashka093/fundevmental_test_task/static/media/sort_numeric_asc.021a414c9d5e65c2d78d05b3ce4146b4.svg",
+    "static/media/delete.svg": "/Romashka093/fundevmental_test_task/static/media/delete.558d6bf1c7b6a9b2b328f91172b4061e.svg",
+    "static/media/pencil.svg": "/Romashka093/fundevmental_test_task/static/media/pencil.1994a4331f252653ffd98747f044514c.svg",
+    "static/media/checkmark.svg": "/Romashka093/fundevmental_test_task/static/media/checkmark.a1f0145f86f03de2248d3e70fcea7a89.svg",
+    "main.1be0ec48.css.map": "/Romashka093/fundevmental_test_task/static/css/main.1be0ec48.css.map",
+    "main.658ca8f2.js.map": "/Romashka093/fundevmental_test_task/static/js/main.658ca8f2.js.map",
+    "787.a9f9520f.chunk.js.map": "/Romashka093/fundevmental_test_task/static/js/787.a9f9520f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.dfd50643.css",
-    "static/js/main.3114df11.js"
+    "static/css/main.1be0ec48.css",
+    "static/js/main.658ca8f2.js"
   ]
 }
