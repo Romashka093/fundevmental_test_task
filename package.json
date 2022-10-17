@@ -28,7 +28,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://github.com/Romashka093/fundevmental_test_task.git",
+  "homepage": "https://romashka093.github.io/fundevmental_test_task/",
   "eslintConfig": {
     "extends": [
       "react-app",
