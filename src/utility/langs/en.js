@@ -4,4 +4,12 @@ export const en = {
   age: 'Age',
   about: 'About',
   actions: 'Actions',
+  requiredName: 'A name is required!',
+  ageRuls: 'The age of the user can be only from 1 to 99!',
+  requiredInfo: 'User info is required!',
+  reset_sort: 'Reset sort',
+  add_new_user: 'Add new user',
+  users: 'users',
+  here_is: 'Here is',
+  ops: 'Ooops...! Please, add a new user!',
 };

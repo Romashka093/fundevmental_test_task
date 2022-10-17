@@ -1,4 +1,3 @@
-// /* eslint-disable import/no-anonymous-default-export */
 /* eslint import/no-anonymous-default-export: [2, {"allowObject": true}] */
 import { createAction } from '@reduxjs/toolkit';
 

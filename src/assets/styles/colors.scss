@@ -1,9 +1,11 @@
 $white: #ffffff;
-$background: #ede4e0;
+$background: #e6e6e6;
+$shadow-background: #70707020;
 $black: #000000;
 $red: #c21010;
 $gray: #707070;
 $primary: #2192ff;
+$primary-dark: #3f55bc;
 $accent: #38e54d;
 $secondary: #9cff2e;
 $yellow: #fdff00;
@@ -11,10 +13,12 @@ $yellow: #fdff00;
 :root {
   --white: #{$white};
   --background: #{$background};
+  --shadow_background: #{$shadow-background};
   --black: #{$black};
   --red: #{$red};
   --gray: #{$gray};
   --primary: #{$primary};
+  --primary_dark: #{$primary-dark};
   --accent: #{$accent};
   --secondary: #{$secondary};
   --yellow: #{$yellow};

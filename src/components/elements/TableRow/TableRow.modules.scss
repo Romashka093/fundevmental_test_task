@@ -1,0 +1,33 @@
+.row {
+  transition: 223ms linear;
+  &:hover {
+    transform: scale(1.01);
+  }
+  &_name {
+    text-transform: capitalize;
+  }
+}
+
+.icon {
+  &_delete {
+    fill: var(--red);
+    transition: 223ms linear;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+  &_edit {
+    fill: var(--primary);
+    transition: 223ms linear;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+  &_done {
+    fill: var(--primary_dark);
+    transition: 223ms linear;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}

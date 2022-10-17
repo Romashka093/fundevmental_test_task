@@ -1,7 +1,16 @@
 import styles from './Input.module.scss';
 const { input, label } = styles;
 
-const Input = ({ type, id, isLabel, handlerChange, value, labelTitle }) => {
+const Input = ({
+  type,
+  id,
+  isLabel,
+  handlerChange,
+  value,
+  labelTitle,
+  min,
+  max,
+}) => {
   return (
     <>
       {isLabel && (
@@ -15,6 +24,8 @@ const Input = ({ type, id, isLabel, handlerChange, value, labelTitle }) => {
         id={id}
         type={type}
         value={value}
+        min={min}
+        max={max}
       />
     </>
   );

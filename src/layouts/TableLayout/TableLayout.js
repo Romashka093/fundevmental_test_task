@@ -1,9 +1,11 @@
-import React from 'react';
 import { Table } from '../../components/Table';
+import styles from './TableLayout.module.scss';
+
+const { mainWrap } = styles;
 
 const TableLayout = () => {
   return (
-    <main>
+    <main className={mainWrap}>
       <Table />
     </main>
   );

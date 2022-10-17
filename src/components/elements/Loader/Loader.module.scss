@@ -1,0 +1,51 @@
+.overlay {
+  overflow-x: hidden;
+  background-color: var(--shadow_background);
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  overflow-y: auto;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+.loading {
+  position: absolute;
+  top: 50%;
+  left: calc(100vw - 50% - 55px);
+  text-align: center;
+
+  &_one,
+  &_two,
+  &_three {
+    font-size: 36px;
+    opacity: 0;
+    animation: dot 1223ms infinite;
+    animation-delay: 0ms;
+  }
+
+  &_two {
+    animation-delay: 223ms;
+  }
+
+  &_three {
+    animation-delay: 323ms;
+  }
+  &_svg {
+    margin: 0 16px 0 0;
+    fill: var(--yellow);
+  }
+}
+
+@keyframes dot {
+  0% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

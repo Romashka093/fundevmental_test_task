@@ -1,5 +1,9 @@
 .input {
   padding: 8px 18px;
+  border-radius: 12px;
+  width: 100%;
+  border: 1px solid var(--yellow);
+  text-transform: capitalize;
 }
 .label {
   color: var(--primary);

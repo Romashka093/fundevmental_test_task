@@ -1,0 +1,15 @@
+.mainWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 72px 0;
+  margin: 0 8px;
+}
+
+@media (min-width: 768px) {
+  .mainWrap {
+    background-image: url(../../assets/images/mike_wazowski.webp);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+  }
+}

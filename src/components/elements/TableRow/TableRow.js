@@ -1,19 +1,21 @@
 /* eslint-disable no-unused-expressions */
-// import styles from './TableRow.modules.scss';
-// const {} = styles;
 import { useState } from 'react';
 import { ReactComponent as Delete } from '../../../assets/icons/delete.svg';
 import { ReactComponent as Pencil } from '../../../assets/icons/pencil.svg';
 import { ReactComponent as Checkmark } from '../../../assets/icons/checkmark.svg';
 import useLocalStorage from '../../../utility/hooks/useLocalStorage';
 import { Input } from '../../ui/Input';
+import '../../../assets/styles/base.scss';
+import './TableRow.modules.scss';
+import { en } from '../../../utility/langs';
+
+const { requiredName, ageRuls, requiredInfo } = en;
 
 const TableRow = ({ user, index, handlerDeleteUser, handlerEditUser }) => {
   const { ID, id, name, age, about, isEditing } = user;
 
   const [isSwitchedOnEditing, setIsSwitchedOnEditing] = useState(isEditing);
 
-  const [editedId, setEditedId] = useLocalStorage(ID, ID);
   const [editedName, setEditedName] = useLocalStorage(name, name);
   const [editAge, setEditAge] = useLocalStorage(age, age);
   const [editInfo, setEditInfo] = useLocalStorage(about, about);
@@ -31,9 +33,8 @@ const TableRow = ({ user, index, handlerDeleteUser, handlerEditUser }) => {
       : (handlerEditUser(
           {
             ...user,
-            ID: editedId,
             name: editedName,
-            age: editAge,
+            age: +editAge,
             about: editInfo,
             isEditing: false,
           },
@@ -42,96 +43,88 @@ const TableRow = ({ user, index, handlerDeleteUser, handlerEditUser }) => {
         localStorage.clear());
   };
 
-  const hendlerEditUserID = evt => {
-    const { value } = evt.target;
-    setEditedId(value);
-  };
-
   const hendlerEditUserName = evt => {
     const { value } = evt.target;
+
+    if (value.length === 0) {
+      return alert(requiredName);
+    }
     setEditedName(value);
   };
 
   const hendlerEditUserAge = evt => {
     const { value } = evt.target;
+    if (+value >= 100 || +value <= 0) {
+      return alert(ageRuls);
+    }
     setEditAge(value);
   };
 
   const hendlerEditUserInfo = evt => {
     const { value } = evt.target;
+    if (value.length === 0) {
+      return alert(requiredInfo);
+    }
     setEditInfo(value);
   };
 
   return (
     <>
-      <tr>
+      <tr className="row">
         <td>{index + 1}</td>
-        <td>
-          <>
-            {isSwitchedOnEditing ? (
-              <Input
-                id={id}
-                type="text"
-                value={editedId}
-                handlerChange={hendlerEditUserID}
-              />
-            ) : (
-              <p>{ID}</p>
-            )}
-          </>
+        <td className="hide_column">
+          <p>{id}</p>
         </td>
         <td>
-          <>
-            {isSwitchedOnEditing ? (
-              <Input
-                id={id}
-                type="text"
-                value={editedName}
-                handlerChange={hendlerEditUserName}
-              />
-            ) : (
-              <p>{name}</p>
-            )}
-          </>
+          {isSwitchedOnEditing ? (
+            <Input
+              id={id}
+              type="text"
+              value={editedName}
+              handlerChange={hendlerEditUserName}
+            />
+          ) : (
+            <p className="row_name">{name}</p>
+          )}
+        </td>
+        <td className="hide_column">
+          {isSwitchedOnEditing ? (
+            <Input
+              id={id}
+              type="number"
+              min="1"
+              max="99"
+              value={editAge}
+              handlerChange={hendlerEditUserAge}
+            />
+          ) : (
+            <p>{age}</p>
+          )}
         </td>
         <td>
-          <>
-            {isSwitchedOnEditing ? (
-              <Input
-                id={id}
-                type="number"
-                value={editAge}
-                handlerChange={hendlerEditUserAge}
-              />
-            ) : (
-              <p>{age}</p>
-            )}
-          </>
-        </td>
-        <td>
-          <>
-            {isSwitchedOnEditing ? (
-              <Input
-                id={id}
-                type="text"
-                value={editInfo}
-                handlerChange={hendlerEditUserInfo}
-                isLabel="true"
-                labelTitle="User information"
-              />
-            ) : (
-              <p>{about}</p>
-            )}
-          </>
+          {isSwitchedOnEditing ? (
+            <Input
+              id={id}
+              type="text"
+              value={editInfo}
+              handlerChange={hendlerEditUserInfo}
+            />
+          ) : (
+            <p>{about}</p>
+          )}
         </td>
         <td>
           <button id={id} value={ID} onClick={handlerSwitchEditing}>
-            {isSwitchedOnEditing ? <Checkmark /> : <Pencil />}
+            {isSwitchedOnEditing ? (
+              <Checkmark className="icon_done" />
+            ) : (
+              <Pencil className="icon_edit" />
+            )}
           </button>
         </td>
         <td>
           <button id={id} value={ID} onClick={() => handlerDeleteUser(id)}>
-            <Delete />
+            <Delete className="icon_delete" />
           </button>
         </td>
       </tr>

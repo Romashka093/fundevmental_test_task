@@ -45,8 +45,6 @@ const editUser = (newUser, id) => async dispatch => {
 };
 
 const sortUsers = (byValue, isOmitOrder) => async dispatch => {
-  console.log('isOmitOrder', isOmitOrder);
-
   dispatch(usersActions.sortUsersRequest());
   try {
     const response = await axios.get(

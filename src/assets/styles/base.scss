@@ -24,7 +24,7 @@ body {
   background-color: initial;
   position: relative;
   height: 100vh;
-  margin: 0 16px;
+  margin: 0 auto;
 }
 
 a {
@@ -75,5 +75,22 @@ button {
     -webkit-transition: 223ms linear;
     -o-transition: 223ms linear;
     transition: 223ms linear;
+  }
+}
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+[type='number']::-webkit-inner-spin-button,
+[type='number']::-webkit-outer-spin-button {
+  visibility: hidden;
+}
+
+.hide_column {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .hide_column {
+    display: table-cell;
   }
 }
