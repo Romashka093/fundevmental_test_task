@@ -12,4 +12,5 @@ export const en = {
   users: 'users',
   here_is: 'Here is',
   ops: 'Ooops...! Please, add a new user!',
+  tableName: 'User Managment',
 };

@@ -35,6 +35,7 @@ const {
   add_new_user,
   users,
   here_is,
+  tableName,
 } = en;
 
 const Table = () => {
@@ -76,7 +77,7 @@ const Table = () => {
   return (
     <section className={section}>
       <div className={section_header}>
-        <h2 className={section_header__heading}>User Managment</h2>
+        <h2 className={section_header__heading}>{tableName}</h2>
         <ul className={section_header__btns}>
           <li className={section_header__btn}>
             <Button

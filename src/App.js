@@ -3,7 +3,7 @@ import { TableLayout } from './layouts/TableLayout';
 import { usersOperations, usersSelector } from './redux/users';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import Loader from './components/elements/Loader/Loader';
+import { Loader } from './components/elements/Loader';
 
 const App = () => {
   const dispatch = useDispatch();

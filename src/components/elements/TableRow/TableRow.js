@@ -5,9 +5,9 @@ import { ReactComponent as Pencil } from '../../../assets/icons/pencil.svg';
 import { ReactComponent as Checkmark } from '../../../assets/icons/checkmark.svg';
 import useLocalStorage from '../../../utility/hooks/useLocalStorage';
 import { Input } from '../../ui/Input';
+import { en } from '../../../utility/langs';
 import '../../../assets/styles/base.scss';
 import './TableRow.modules.scss';
-import { en } from '../../../utility/langs';
 
 const { requiredName, ageRuls, requiredInfo } = en;
 
